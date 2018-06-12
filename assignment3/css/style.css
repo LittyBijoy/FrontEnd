@@ -1,0 +1,318 @@
+/* common */
+
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    color:whitesmoke; 
+    flex-direction: column;     
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0;      
+}
+
+header{   
+    position: fixed;
+    display: flex;
+    z-index: 1;
+    width: 100%;
+}
+.head{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("../img/banner-bg.jpeg");  
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.logo{
+    font-size:1.5em;    
+    padding-left: 10px;
+    padding-top: 10px;
+    flex: 1;
+}
+span{
+    padding-right: 10px;
+}
+.menu{
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.arrow{
+    width: 100%;
+    height: 95vh;    
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+.arrowdown{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    position: relative;   
+    padding: 1% .8%;
+    border: 1px solid;
+    border-radius: 10px;  
+    background: white;
+    background: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2));
+    -webkit-animation: bounce 3s ease infinite;
+    animation: bounce 3s ease infinite; 
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1,1) translate(0px, 0px);
+    }
+
+    30%{
+        transform: scale(1,1) translate(0px, 10px); 
+    }
+    
+    70%{
+        transform: scale(1,1) translate(0px, -20px); 
+    }     
+    90% {
+        transform: scale(1,1) translate(0px, 8px);
+    }
+    100% {
+        transform: scale(1,1) translate(0px, 0px);
+    }
+}
+/* section */
+.sect{
+    height: 400px;
+    width: 100%; 
+    position: relative;    
+}
+.part1{   
+    background-color: #51B9CC;     
+}
+
+.part2{
+    background-color: #51CCA8;
+}
+.pic img{  
+    height: 400px;
+    width: 45%;
+}
+.right img{
+    margin-left: 55%;
+}
+.content{
+    background-color: white; 
+    width: 45%;         
+}
+.contentpos1{ 
+    position: relative; 
+    top: -85%;  
+    left: 17%;    
+}
+.contentpos2{
+    position: relative; 
+    top: -85%;   
+    left: 40%;
+}
+.message{
+    padding: 5% 7%;  
+    display: flex;
+    flex-direction: column;
+}
+.msghead{
+    border-bottom: 2px solid;
+    color: black;
+    font-weight: bold;
+    font-size: 15px; 
+    align-self: center;
+}
+.msg{
+    color: black;
+    font-size: 15px;;
+}
+.button input{
+    color: white;    
+    font-variant: small-caps;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.col1 input{
+    background-color: #51B9CC;
+}
+.col2 input{
+    background-color: #51CCA8;
+}
+.wish1{
+    position: relative;
+    top: -50%;
+    left: 65%;
+    text-align: right;
+}
+.wish1 p{
+    width:20%;
+}
+.wish2{
+    position: relative;
+    top: -50%;
+    left: 17%;
+}
+.last{
+    background-color: #51B9CC;       
+}
+.lastrow{
+    height: 400px; 
+    background: linear-gradient(-65deg,transparent 50%, #51CCA8 50%);
+    display: flex;
+    padding-left: 17%;
+    padding-right: 17%;
+    justify-content: space-between;
+}
+.imgmsg{
+    width: 32%;
+    height: 350px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    align-self: center;    
+}
+.carimg{
+    width: 100%;
+    height: 150px;  
+    overflow: hidden;  
+}
+.carmsg{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+.imgmsg:hover img{
+    transform: scale(1.1);
+}
+.carmsg .msg{
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow: auto;
+}
+.carimg img{
+    width: 100%;
+    height: 150px;
+}
+footer{
+    background-color: #51CCA8;
+}
+.footcon{
+    display: flex;
+    flex-direction: column;
+}
+.foothead{
+    border-bottom: 2px solid;
+    color: white;
+    font-weight: bold;
+    font-size: 15px; 
+    align-self: center;
+}
+.footpara{
+    color: black;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.footemail{
+    align-self: center;    
+    display: flex;
+    padding: 1%;
+}
+.footemail input[type=button]{
+    color: white;
+    background-color: rgb(117, 128, 230);
+    font-variant: small-caps;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    font-size: 15px;
+}
+.footemail input[type=email]{
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 13px;
+    border: none;
+    width: 150px;
+}
+.footemail input[type=email]:focus{
+    border: 2px solid rgb(117, 128, 230);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+    header{   
+        position: fixed;
+        display: flex;
+        z-index: 100;
+        width: 100%;
+    }
+    .sect{
+        height: auto;
+        display: flex;
+        flex-direction: column; 
+        position: static;       
+    }
+     .pic img{
+        width: 100%;
+    }
+    .wish1{
+        position: static;
+        text-align: center;
+    }    
+    .wish1 p{
+        width:100%;
+    }
+    .contentpos1{
+        position: static;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+    .wish2{
+        position: static;
+        text-align: center;
+    }
+    .contentpos2{
+        position: static;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+    .lastrow{
+        height: auto; 
+        background: linear-gradient(-60deg,transparent 50%, #51CCA8 50%);
+        display: flex;
+        flex-direction: column;             
+    }
+    .imgmsg{
+        width: 90%;        
+    } 
+    .right img{
+        margin-left: 0;
+    }
+    .footpara{
+        text-align: justify;
+    }
+    .carmsg .msg{
+        text-align: justify;
+    }
+    .imgmsg{
+        margin: 20px;
+    }
+    .p1{
+        margin-top:40px; 
+    }
+    .p2{
+        margin-bottom: 40px;
+    }
+}

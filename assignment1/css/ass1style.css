@@ -1,0 +1,162 @@
+/* common part */
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: #000;
+    font-family: 'Open Sans', 'Oswald', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+.container{  
+    margin: auto;
+    overflow: hidden;
+}
+section{
+    height: 100vh;
+    background-size: cover;
+}
+
+/* header part */
+#header{
+    position: relative;
+    background-image: url('../img/About-Us.jpg');
+    background-size: cover;
+}
+#logo img{
+    float: left;
+    width: 80px;
+    margin-left: 150px;
+}
+header nav{
+    float: right;
+    list-style-type: none;
+    margin: 20px 200px 0 0;   
+    background-color: goldenrod;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;    
+}
+a.alink:hover {
+    color: white;
+    background-color: red;
+    padding: 10px 10px;
+}
+header a.alink{
+    text-decoration: none;
+    color: black;
+    background-color: goldenrod;    
+    padding: 10px 10px;
+}
+header ul{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+header li{
+    display: inline;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); 
+    padding: 3em;
+}
+.hello{
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* About part */
+#about{
+    position: relative;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    background-color: #ccc;
+}
+.aboutheading{
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.aboutimg{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.aboutimg:hover{
+    opacity: 1;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+/* Contact part */
+#contact{
+    position: relative;
+}
+.contactheading{
+    padding: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.formdiv{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    background-color: #ccc;
+    height:30vh ;
+}
+form{
+    margin: 3% 30%;
+}
+input{
+    border-radius: 25px;
+    padding: 10px 25px;
+    border: none;
+    outline: none;    
+}
+.button{
+    background-color: goldenrod;    
+    margin-left: 40%;      
+}
+.button:hover{
+    background-color:orangered;
+}
+.textbox{
+    width: 80%;  
+    margin: 5px;  
+}
+
+/* footer part */
+footer li{
+    float: left;
+}
+footer{
+    position: fixed;    
+    bottom: 0px;
+    height: 40px;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    background: white;
+}
+footer ul{
+    padding: 8px;
+    margin-left: 30px;
+    list-style-type: none;
+}
+footer a{
+    color: black;
+    padding: 3px;    
+}
