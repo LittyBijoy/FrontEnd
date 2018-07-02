@@ -1,4 +1,86 @@
-function perform(performerName,performerAct)
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<!-- <script src="main.js"></script> -->
+</head>
+<body>
+	<div class="outer1">
+		<div class="inner">
+			<span >rex</span>
+			<select name="activity" id="activity">
+				<option value="dance">dance</option>
+				<option value="act">act</option>
+				<option value="sing">sing</option>
+			</select>
+			<button>Register</button>
+			<div class="message"></div>
+		</div>
+	
+		<div class="inner">
+			<span >noble</span>
+			<select name="activity" id="activity">
+				<option value="dance">dance</option>
+				<option value="act">act</option>
+				<option value="sing">sing</option>
+			</select>
+			<button>Register</button>
+			<div class="message"></div>
+		</div>
+	
+		<div class="inner">
+			<span >alex</span>
+			<select name="activity" id="activity">
+				<option value="dance">dance</option>
+				<option value="act">act</option>
+				<option value="sing">sing</option>
+			</select>
+			<button>Register</button>
+			<div class="message"></div>
+		</div>
+			
+	</div>
+	
+	<div class="outer2">
+		<div class="inner">
+			<span >stage1</span>
+			<select name="activity" id="activity">
+				<option value="dance">dance</option>
+				<option value="act">act</option>
+				<option value="sing">sing</option>
+			</select>
+			<button>perform</button>
+			<div class="message"></div>
+		</div>
+		<div class="inner">
+			<span >stage2</span>
+			<select name="activity" id="activity">
+				<option value="dance">dance</option>
+				<option value="act">act</option>
+				<option value="sing">sing</option>
+			</select>
+			<button>perform</button>
+			<div class="message"></div>
+		</div>
+		<div class="inner">
+			<span >stage3</span>
+			<select name="activity" id="activity">
+				<option value="dance">dance</option>
+				<option value="act">act</option>
+				<option value="sing">sing</option>
+			</select>
+			<button>perform</button>
+			<div class="message"></div>
+		</div>
+		
+	</div>
+	<script>
+		function perform(performerName,performerAct)
 		{
 			return " & " + performerName + " is ready to do " + performerAct;
 		}
@@ -7,3 +89,6 @@ function perform(performerName,performerAct)
 		{
 			this.innerHTML = this.innerHTML + "<br>" +stageName + " is reserved for activity " + activityName + perform(); 
 		}
+	</script>
+</body>
+</html>

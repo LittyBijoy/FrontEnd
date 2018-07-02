@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+    
+    <script>
+        function Rectangle(a,b,c,d){
+            this.sideA=a;
+            this.sideB=b;
+            this.sideC=c;
+            this.sideD=d;
+        }
+        var shape = new Rectangle(121,20,10,20);
+        Rectangle.prototype.isRectangle=function isRectangle(){
+            return(this.sideA===this.sideC && this.sideB===this.sideD);
+        }
+        console.log("shape is rectangle : " + shape.isRectangle());
+    </script>
+</body>
+</html>
