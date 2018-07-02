@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    
+    <script>
+            function numbers(){
+                var arr = [10, 12, 15, 21];
+                document.write("array : "+ arr);
+                for (var i = 0; i < arr.length; i++) {
+                    setTimeout(function() {
+                   document.write('<br>The number in index '+i +': ' +arr[i]);
+                    }(), 2000);
+                }        
+            }
+            numbers();
+
+
+            Array.prototype.sum = function () {
+                var total =0;
+                for (let i = 0; i < this.length; i++) {
+                    total+=this[i];
+                }                
+                return total;
+            }
+            var array = [10, 12, 15, 21];
+            document.write("<br> Sum of array : " + array.sum());
+
+    </script>    
+    <br>
+    <br>
+    <button id="btn-0">Button 1!</button>
+    <button id="btn-1">Button 2!</button>
+    <button id="btn-2">Button 3!</button>
+    
+    <script>
+       var btncall = function(){
+            var prizes = ['mango', 'Apple', 'Strawberry'];
+            for (let btnNum = 0; btnNum < prizes.length; btnNum++) {
+                document.getElementById('btn-' + btnNum).onclick = function() {
+                   alert(btnNum + ' ' + prizes[btnNum]);
+                };
+            }
+        };
+        btncall();        
+    </script>
+</body>
+</html> 

@@ -6,7 +6,8 @@
 .container{
     display: flex;
     color:whitesmoke; 
-    flex-direction: column;     
+    flex-direction: column;   
+    overflow: hidden;
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -103,16 +104,16 @@ span{
 }
 .content{
     background-color: white; 
-    width: 45%;         
+    width: 45%;       
 }
 .contentpos1{ 
     position: relative; 
-    top: -85%;  
+    top: -95%;  
     left: 17%;    
 }
 .contentpos2{
     position: relative; 
-    top: -85%;   
+    top: -95%;   
     left: 40%;
 }
 .message{

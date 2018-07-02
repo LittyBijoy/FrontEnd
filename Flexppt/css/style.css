@@ -1,0 +1,53 @@
+h1 {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    line-height: 0;
+    padding: 0;
+}
+
+h1 span {
+    background: #fff;
+    padding: 0 15px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: rgb(171, 191, 211);      
+}
+  
+.flex-container > div {    
+width: 100px;
+margin: 10px;
+text-align: center;
+line-height: 75px;
+font-size: 30px;
+}
+.pink{
+    background-color: pink;
+}
+.green{
+    background-color: aquamarine;
+}
+.purple{
+    background-color: rgb(186, 80, 228);
+}
+.property1{
+    flex-direction: row;
+}
+.property2{
+    flex-wrap: wrap;
+}
+.property3{
+    justify-content: center;
+}
+.property4{
+    align-items: baseline; 
+}
+.property5{
+    flex-wrap: wrap;
+    align-content: center;
+    height: 400px;
+}
+.property6{
+    height: 300px;
+}

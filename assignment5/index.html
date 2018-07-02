@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<body>
+        <div id="time">
+            </div>
+    <script>
+        // Q1
+       function Employee(firstName,lastName) {
+           return firstName + " " + lastName;
+           
+        };
+        document.writeln(Employee("litty", "bijoy"));
+
+        // Q2
+        function print(){
+            var numarray = [1,2,3,4,5,6,7,8,9,10];
+            document.write("<br>print array : " +numarray[0]);
+            for (let index = 1; index < numarray.length; index++) {
+                document.write(", "+numarray[index]);                
+            }
+        }
+        print();
+
+        // Q3
+        var arr = [2,4,8,9,10,2,5,10,12,89];
+        document.writeln("<br> Actual Array : "+ arr);    
+        document.writeln("<br> Filtered Array  : "+Filter(arr));
+        function Filter(arr) {
+            var filtered=[];
+            var flag=0;
+            filtered.push(arr[0]);
+            for (var i = 1; i < arr.length; i++) {
+                flag=0;
+                for (var j = 0; j < filtered.length; j++) {
+                    if(filtered[j]==arr[i]){  
+                        flag=0;                     
+                        break;  
+                    }
+                    flag=1;                    
+                }
+                if(flag==1)
+                    filtered.push(arr[i]);                
+            }
+            filtered.sort(function(a, b){return a - b});
+            return filtered;
+        }
+
+        // Q4
+        function printTime(){
+            var time = new Date();
+            h=format(time.getHours());
+            m=format(time.getMinutes());
+            s=format(time.getSeconds());
+            document.getElementById("time").innerHTML = h + ":"+ m +":"+ s;
+            var x=setTimeout(printTime,500);
+        }
+        function format(a){
+            if(a<10){
+                a = "0" + a;
+            }
+            return a;
+        }
+        printTime();
+    </script>
+    
+   
+</body>
+</html>
