@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+body{   
+    padding: 0;
+    margin: 0;
+    background-color: #56ade4;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+/* header */
+.logobar{
+    background-color: #f0f5f8;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 70px;
+}
+.logobar a{
+    color: #0f65af;
+    text-decoration: none;
+    font-size:normal normal normal;
+}
+.logobar i{
+    color: #0f65af;
+}
+.bold{
+    font-weight: bold;
+    color: #0f65af;
+}
+header ul{
+    margin: 0;
+    padding: 0;
+}
+header li{
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+.logobar #logo {
+    float: left;    
+}
+.logobar #logo h1{
+    margin: 0;
+}
+.logobar nav{
+    float: right;
+    margin-top: 30px;
+}
+/*               menu bar       */
+/* ---------------------------- */
+.menubar{
+    background-color: #0f65af;
+    min-height: 50px;
+    color: white;
+}
+.menubar a{
+    color: white;
+    font-weight: bold;
+}
+.menu{
+    float: left;
+    margin-top: 13px;
+    
+}
+#searchcart {
+    float: right;
+}
+#searchcart input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 15px;
+    border: none;  
+    margin-right: 0;  
+}  
+#searchcart button {  
+    padding: 6px 10px;
+    margin-left: 0;
+    margin-top: 8px;
+    margin-right: 16px;
+    background:white;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    color: #0f65af;
+  }

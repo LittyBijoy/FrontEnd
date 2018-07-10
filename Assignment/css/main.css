@@ -1,53 +1,18 @@
-body{   
-    padding: 0;
-    margin: 0;
-    background-color: #56ade4;
-}
-.container{
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-/* header */
-header{
-    background-color: #f0f5f8;
+.wrapper{
     padding-top: 20px;
     padding-bottom: 20px;
-    min-height: 70px;
 }
-header a{
-    color: #0f65af;
-    text-decoration: none;
-    font-size:normal normal normal;
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
 }
-header i{
-    color: #0f65af;
+.wrap{
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.bold{
-    font-weight: bold;
-    color: #0f65af;
+.ad-block {
+   width: 50%;
 }
-header ul{
-    margin: 0;
-    padding: 0;
-}
-header li{
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-header #logo {
-    float: left;    
-}
-header #logo h1{
-    margin: 0;
-}
-header nav{
-    float: right;
-    margin-top: 30px;
-}
-/*               menu bar       */
-/* ---------------------------- */
-.menubar{
-    background-color: #0f65af;
-    min-height: 50px;
-}
+.ad-block img{
+    width: 100%;
+ }

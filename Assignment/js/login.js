@@ -1,19 +1,18 @@
     (function(){
         $('.button').click(function(){
             $.ajax({
-                url: 'https://ccstore-z1ma.oracleoutsourcing.com/ccstore/v1/login',
-                dataType: 'json',
-                type: 'post',
-                contentType: 'application/x-www-form-urlencoded',
-                data: JSON.stringify({"grant_type": 'password',"username": $('#login-email').val(), "password": $('#login-password').val()}),
-                header: {
-                    "Content-Type":"application/x-www-form-urlencoded",
-                    "Authorization":"Basic YWRtaW46YWRtaW4="
+                url: 'https://oe-final.herokuapp.com/auth',
+                method: 'post',                
+                data: {"access_token": "fiOA4CojZ0wP5QcLStQLw1PnjZAtGEuX"},
+                headers: {                
+                    "Authorization":"Basic "+btoa($('#login-email').val()+':'+$('#login-password').val())
                 },            
-                success: function( data, textStatus, jQxhr ){
-                    console.log( data );
+                success: function(data){
+                    console.log(data.token);
+                    localStorage.setItem("token",data.token);
+                    window.open("index.html","_self");
                 },
-                error: function( jqXhr, textStatus, errorThrown ){
+                error: function( errorThrown ){
                     console.log( errorThrown );
                 }
             });
