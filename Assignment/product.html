@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Princess Auto Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/product.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./js/node_modules/bootstrap/dist/css/bootstrap.min.css" />    
+</head>
+<body>
+    <header class="header"></header>
+    <section class="breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"></li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="Product">
+        <div class="container">
+            <div class="card">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                        <div class="preview col-md-6">                            
+                            <div class="preview-pic tab-content">
+                                <img id="pdpimg"/>
+                            </div>  
+                        </div>
+                        <div class="details col-md-6">
+                            <h3 class="product-title" id="pdpheading"></h3>
+                            <div class="rating">
+                                <span class="stars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </span>
+                                <span class="review-no"><a href="#">(41)</a></span>
+                                <span class="review-no"><a href="#" class="sameline">Write a review</a></a></span>                                
+                            </div>
+                            <p class="product-description" id="pdpdesc"></p>
+                            <span  id="pdpprice"></span> 
+                            <div class="action">
+                                <button class="add-to-cart btn btn-default" type="button" onclick="addtocart(this);">add to cart</button>
+                                <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"></footer>  
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./js/product.js"></script>
+</body>
+</html>

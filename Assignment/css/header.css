@@ -54,6 +54,7 @@ header li{
     background-color: #0f65af;
     min-height: 50px;
     color: white;
+    font-size: 90%;
 }
 .menubar a{
     color: white;
@@ -66,6 +67,28 @@ header li{
 }
 #searchcart {
     float: right;
+    width: 50%;
+    display: flex;
+}
+.search{
+    width: 70%;
+    display: flex;
+}
+.cartcol{
+    width: 30%;
+    margin-top: 13px;
+    
+}
+.frmSearch{
+    width: 80%;
+}
+#suggesstion-box{    
+    background-color: white;
+    color: #0f65af;
+    width: 70%;
+}
+#suggesstion-box{
+    display: none;
 }
 #searchcart input[type=text] {
     padding: 6px;
@@ -73,9 +96,14 @@ header li{
     font-size: 15px;
     border: none;  
     margin-right: 0;  
+    width: 100%;
+    
 }  
+#searchcart input[type=text]:focus {
+    outline: none;
+}
 #searchcart button {  
-    padding: 6px 10px;
+    padding: 6px ;
     margin-left: 0;
     margin-top: 8px;
     margin-right: 16px;
@@ -83,5 +111,33 @@ header li{
     font-size: 15px;
     border: none;
     cursor: pointer;
-    color: #0f65af;
+    color: #0f65af;   
+    margin-bottom: 2%;
   }
+  .srhbtn{
+    width: 20%;
+  }
+  @media screen and (max-width: 990px) {
+   
+    .cartcol{
+        width: 30%;
+        display: flex;
+    }
+    /* .logobar nav a{
+        display: none;
+    } */
+    .displynon{
+        display: none;
+    }
+    header li{
+        display: inline;
+        padding: 0 2px 0 2px;
+    }
+}
+@media screen and (max-width: 790px) {
+    #searchcart {
+        float: left;
+        width: 50%;
+        display: flex;
+    }
+}

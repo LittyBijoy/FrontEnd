@@ -1,4 +1,5 @@
     (function(){
+        localStorage.setItem("token","");
         $('.button').click(function(){
             $.ajax({
                 url: 'https://oe-final.herokuapp.com/auth',
@@ -10,10 +11,11 @@
                 success: function(data){
                     console.log(data.token);
                     localStorage.setItem("token",data.token);
-                    window.open("index.html","_self");
+                    window.open("home.html","_self");
                 },
                 error: function( errorThrown ){
                     console.log( errorThrown );
+                    $('.error').text("Login Failed");
                 }
             });
         })

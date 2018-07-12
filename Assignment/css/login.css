@@ -64,3 +64,8 @@
 .login-form .button:focus {
 	outline: none;
 }
+.error{
+    color: red;
+    font-weight: 600;
+    text-align: center;
+}

@@ -13,25 +13,28 @@
     <section class="logobar">
         <div class="container">
             <div id="logo">
-                <img src="img/princess-auto-logo.png"/>
+                <a href="home.html"><img src="img/princess-auto-logo.png"/></a>
             </div>
             <nav>
                 <ul>
                     <li >
+                            <a href="#">
                         <i class="fa fa-map-marker"></i>
-                        <a href="#">Select My Store:</a>
-                        <i class="fa fa-caret-down"></i>
+                       <span class="displynon"> Select My Store:</span>
+                        <i class="fa fa-caret-down displynon"></i>
+                    </a>
                     </li>
                     <li>
-                        <a href="#">Gift Cards</a>
+                        <a href="#" class="displynon">Gift Cards</a>
                     </li>
                     <li>
+                        <a href="index.html">
                         <i class="fa fa-lock"></i>
-                        <a href="#">Log In</a>
+                        <span class="displynon"> Log Out</span></a>
                     </li>
                     <li>
-                        <span href="#" class="bold">EN</span>
-                        <a href="#">English</a>
+                            <a href="#"><span href="#" class="bold">EN</span>
+                       <span class="displynon"> English </span></a>
                     </li>
                 </ul>
             </nav>
@@ -39,37 +42,46 @@
     </section>
     <section class="menubar">
         <div class="container">
-            <nav class="menu"> 
-                <ul>
-                    <li >
-                        <i class="fa fa-bars"></i>
-                        <a href="#">SHOP</a>                        
-                    </li>
-                    <li>
-                        <a href="#">SALE</a>
-                    </li>
-                    <li>
-                        <a href="#">FLYER</a>
-                    </li>
-                    <li>
-                        <a href="#">SHOWCASE</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="menu">
+                <nav> 
+                    <ul>
+                        <li >
+                            <i class="fa fa-bars"></i>
+                            <a href="#">SHOP</a>                        
+                        </li>
+                        <li class="displynon">
+                            <a href="#">SALE</a>
+                        </li>
+                        <li class="displynon">
+                            <a href="#">FLYER</a>
+                        </li>
+                        <li class="displynon">
+                            <a href="#">SHOWCASE</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <div id="searchcart">
                 <span class="search">
-                    <input type="text" placeholder="Search" name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <span class="frmSearch">
+                        <input type="text" id="search-box" placeholder="Search" />
+                        <div id="suggesstion-box"></div>
+                    </span>
+                    <span class="srhbtn">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                    </span>
+                    
                 </span>
-                <span class="cart">
-                    <a href="#">
+                <span class="cartcol">
+                    <a href="cart.html">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            MY CART
-                            <span ></span>
+                          <span class="displynon">MY CART</span>  
+                        <span class="cartnumber"></span>
                     </a>
                 </span>
             </div>
         </div>  
     </section>
+    <script src="./js/header.js"></script>
 </body>
 </html>
