@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/knockout-3.5.0rc2.js"></script>
+</head>
+<body>
+    <input type="checkbox" name="name" data-bind="checked:ShowHideSection"/> Show/Hide 
+    <hr/>
+    <div id="div1" data-bind="if:ShowHideSection">
+        This is Div1 block....
+    </div>
+    <div id="div2" data-bind="visible:ShowHideSection">
+        This is Div2 block..
+    </div>
+    <hr/>
+    <div>
+        <ul>
+            <li>This item always appear</li>
+            <!--ko if:ShowHideSection-->
+            <li>THis item is present/absent according to checkbox</li>
+            <!--/ko-->
+        </ul>
+    </div>
+    <hr/>
+    <div>
+        City : <span data-bind="text:City"></span><br/>
+        Office Phone : <span data-bind="text:Phone.Office"></span><br/>
+        Home Phone : <span data-bind="text:Phone.Home"></span>
+    </div>
+    <!-- The same we can write without phone. -->
+    With Binding Example
+    <div>
+            City : <span data-bind="text:City"></span><br/>
+        <span data-bind="with:Phone">            
+            Office Phone : <span data-bind="text:Office"></span><br/>
+            Home Phone : <span data-bind="text:Home"></span>
+        </span>
+    </div>
+    <hr/>
+    foreach binding Example
+    <ul data-bind="foreach:Colors">
+        <li data-bind="text:$data"></li>
+    </ul>
+    <script>
+        var myViewModel=function(){
+            this.City=ko.observable("Mumbai");
+            this.Phone={Home:123456, Office:654321};
+            this.ShowHideSection=ko.observable(true);
+            this.Colors=ko.observable(["red","green","blue","orange","pink","black"]);
+        }
+        ko.applyBindings(myViewModel);
+    </script>
+</body>
+</html>

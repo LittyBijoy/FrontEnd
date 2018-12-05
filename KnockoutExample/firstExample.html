@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+   <script src="/scripts/knockout-3.5.0rc2.js"></script>
+</head>
+<body>
+    <h3>example 1</h3> 
+    <p>First Name <input data-bind="value : firstName"/></p>
+    <p>First Name :  <span data-bind="text: firstName"></span></p>
+    <p>Last Name <input data-bind="value : lastName"/></p>
+    <p>Last Name :  <span data-bind="text: lastName"></span></p>
+
+    <h3>example 2</h3> 
+    <p>First Name <input data-bind="value : firstName"/></p>
+    <p>Last Name <input data-bind="value : lastName"/></p>
+    <p>Full Name :  <span data-bind="text: fullName"></span></p>
+
+    
+    <script type="text/javascript">  
+        var viewModel = {
+            firstName : ko.observable("Litty"),
+            lastName : ko.observable("Bijoy")
+        };
+        viewModel.fullName=ko.dependentObservable(function(){
+            return this.firstName() + " " + this.lastName();
+        }, viewModel);
+        ko.applyBindings(viewModel);
+    </script>
+     
+</body>
+</html>

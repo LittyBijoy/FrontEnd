@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/knockout-3.5.0rc2.js"></script>
+    <style>
+        .redColor{
+            color: red;
+            border: solid 5px yellow;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" name="txtNumber" data-bind="value:Number" min="1" max="100"/>
+    <br/>
+    Range value :
+    <span data-bind="visible:IsEvenNumber">Even</span>
+    <span data-bind="visible:IsEvenNumber()==false"> Odd</span>
+    <span data-bind="text: Number"></span>
+     <br/>
+     Set Text without tag : 
+     (<!--ko text:Number--><!--/ko-->)
+    <hr/>
+    Text Binding does HTML Encoding automatically : 
+     <span data-bind="text:FormattedNumber"></span>
+     <br/>
+     HTML binding doesn't do HTML encoding :
+     <span data-bind="html:FormattedNumber"></span>
+     <hr/>     
+     <span data-bind="style:{color:DisplayColor,fontWeight:IsEvenNumber()?'bold':''}">Style Binding Demo Text</span>
+     <hr/>
+     <span data-bind="css:{redColor:IsEvenNumber}">CSS Binding Demo Text</span>
+     <hr/>
+     attr binding : 
+     <a data-bind="attr:{href:Urls()[Number()%2],title:Number()%2}">Click here</a>
+    <script>
+    var myViewModel=function(){
+        this.Number=ko.observable(1);
+        this.IsEvenNumber=ko.computed(function(){
+            return this.Number()%2==0;
+        },this)
+        this.FormattedNumber=ko.computed(function(){
+            return "<b>"+ this.Number() + "</b>";
+        },this)
+        this.DisplayColor=ko.computed(function(){
+            if(this.Number()>50)
+                return 'Red';
+            else
+                return 'Green';
+        },this)
+        this.Urls=ko.observableArray(['http://www.red.com','http://www.green.com']);
+    }
+    ko.applyBindings(myViewModel);
+    </script>
+</body>
+</html>

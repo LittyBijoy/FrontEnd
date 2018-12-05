@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/knockout-3.5.0rc2.js"></script>
+    <script>
+//An observable whose value is computed dynamically based on other observables.
+
+    $(document).ready(function(){
+        $('#btnAddAccount').click(function(){
+            var acc= new Account($("#txtNewId").val(),$("#txtNewName").val(),$("#txtNewBalance").val());
+            accViewModel.Accounts.push(acc);
+            alert(accViewModel.Accounts().length);
+        })
+        $('#btnRemoveAccount').click(function(){
+            accViewModel.Accounts.pop();
+            alert(accViewModel.Accounts().length)
+        })
+        $('#ddlAccounts').change(function(){
+            var selInd=document.getElementById("ddlAccounts").selectedIndex;
+            accViewModel.SelectedAccountIndex(selInd);
+        })
+    })
+    </script>
+</head>
+<body>
+    <h4>Account List</h4>
+    Account Id's :<select id="ddlAccounts" data-bind="options:Accounts,optionsText:'Name',optionsValue:'Id'"></select><br/>
+    Total Number of Accounts : <span data-bind="text:Accounts().length"></span><br/>
+    Total Balance in All Accounts : <span data-bind="text:TotalBalance"></span>
+
+    <hr/>
+    <h4>Details</h4>
+    Id : <span data-bind="text:Accounts()[SelectedAccountIndex()].Id"></span><br/>
+    Name : <span data-bind="text:Accounts()[SelectedAccountIndex()].Name"></span><br/>
+    Balance : <span data-bind="text:Accounts()[SelectedAccountIndex()].Balance"></span><br/>
+
+    <hr/>
+    <h4>Add Details</h4>
+    New Id : <input type="text" id="txtNewId", value=""/><br/>
+    New Name : <input type="text" id="txtNewName", value=""/><br/>
+    New Balance : <input type="text" id="txtNewBalance", value=""/></br>
+    <input type="button" id="btnAddAccount" value="Add Account" />
+    <input type="button" id="btnRemoveAccount" value="Remove Account"/>
+    <script>
+        function Account(id,name,balance){
+            this.Id=id;
+            this.Name=name;
+            this.Balance=balance;
+        }
+        function AccountViewModel(acc){
+            var a1=new Account(1,"A1",1000);
+            var a2=new Account(2,"A2",2000);
+            var a3=new Account(3,"A3",3000);
+            this.Accounts=ko.observableArray([a1,a2,a3]);
+            this.SelectedAccountIndex=ko.observable(0);
+            this.TotalBalance=ko.computed(function(){
+                var total=0;
+                for(var i=0;i<this.Accounts().length;i++){
+                    total+=Number(this.Accounts()[i].Balance);
+                }
+                return total;
+            },this)
+        }
+        var acc=new Account(1,"A1",1000);
+        var accViewModel=new AccountViewModel(acc);
+        ko.applyBindings(accViewModel);
+    </script>
+</body>
+</html>

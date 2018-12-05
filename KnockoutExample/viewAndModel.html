@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/knockout-3.5.0rc2.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#addDeposit').click(function(){
+                accViewModel.Balance(accViewModel.Balance()+Number($('#deposit').val()));
+            })
+        })
+    </script>
+</head>
+<body>
+    <h4>Details</h4>
+    <p>Id : <span data-bind="text:Id"></span></p>
+    <p>Name  : <span data-bind="text:Name"></span></p>
+    <p>Address  : <span data-bind="text:Address"></span></p>
+    <p>Balance  : <span data-bind="text:Balance"></span></p>
+    <hr/>
+    <p>Update Address  : <input type="text" data-bind="value:Address"></p>
+    <p>deposit : <input type="text" id="deposit"></p>
+    <p><input type="button" id="addDeposit" value="Add Deposit"></p>
+    <script>
+        //model
+    function Account(id,name,address,balance){
+        this.Id=id;
+        this.Name=name;
+        this.Address=address;
+        this.Balance=balance;
+    }
+        //View model
+    function AccountViewModel(acc){
+        this.Id=acc.Id;
+        this.Name=acc.Name;
+        this.Address=ko.observable(acc.Address);
+        this.Balance=ko.observable(acc.Balance);
+    }
+    var acc=new Account(001,"Litty","Kharghar",1000);
+    var accViewModel=new AccountViewModel(acc);
+
+    console.log('acc ', accViewModel);
+    
+
+  // ko.applyBindings(acc); // object Address value not changing
+    //or
+    ko.applyBindings(accViewModel); // object Address is observale , so value will get change
+    </script>
+</body>
+</html>

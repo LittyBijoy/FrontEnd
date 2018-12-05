@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/knockout-3.5.0rc2.js"></script>
+</head>
+<body>
+    Details
+    <hr/>
+    <table>
+        <thead>
+            <th>S.No</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+        </thead>
+        <!-- Example without 'as' -->
+        <tbody data-bind="foreach:Accounts">
+            <tr>
+                <td data-bind="text:$index()+1"></td>
+                <td data-bind="text:Id"></td>
+                <td data-bind="text:Name"></td>
+                <td data-bind="text:Balance"></td>
+            </tr>
+        </tbody>
+        <!-- Example with 'as' -->
+        <!-- <tbody data-bind="foreach:{data:Accounts,as:'Account'}">
+                <tr>
+                    <td data-bind="text:$index()+1"></td>
+                    <td data-bind="text:Account.Id"></td>
+                    <td data-bind="text:Account.Name"></td>
+                    <td data-bind="text:Account.Balance"></td>
+                </tr>
+            </tbody>  -->
+    </table>
+    <script>
+        function Account(id,name,balance){
+            this.Id=id;
+            this.Name=name;
+            this.Balance=balance;
+        }
+        var myAccountViewModel=new function(){
+            this.Accounts=ko.observable([
+                new Account(001,"A1",1000),
+                new Account(002,"A2",2000),
+                new Account(003,"A3",3000),
+                new Account(004,"A4",4000)
+            ])
+        }
+        ko.applyBindings(myAccountViewModel);
+    </script>
+</body>
+</html>
